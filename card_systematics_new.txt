@@ -1,0 +1,56 @@
+Combination of EleMu=card_elemu.txt  TwoMuDY=card_ll_dy_emucombined.txt  TwoMuZH=card_ll_zh.txt
+imax 3 number of bins
+jmax 3 number of processes minus 1
+kmax 22 number of nuisance parameters
+----------------------------------------------------------------------------------------------------------------------------------
+shapes data_obs  EleMu     param_ws_new.root wspace_new:data_obs_elemu
+shapes heavy     EleMu     param_ws_new.root wspace_new:heavy_elemu_new
+shapes light     EleMu     param_ws_new.root wspace_new:light_elemu
+shapes other     EleMu     param_ws_new.root wspace_new:other_elemu
+shapes data_obs  TwoMuDY   param_ws_new.root wspace_new:data_obs_twomudy
+shapes heavy     TwoMuDY   param_ws_new.root wspace_new:heavy_twomudy_new
+shapes light     TwoMuDY   param_ws_new.root wspace_new:light_twomudy_new
+shapes other     TwoMuDY   param_ws_new.root wspace_new:other_twomudy
+shapes signal    TwoMuDY   param_ws_new.root wspace_new:signal_twomudy
+shapes data_obs  TwoMuZH   param_ws_new.root wspace_new:data_obs_twomuzh
+shapes heavy     TwoMuZH   param_ws_new.root wspace_new:heavy_twomuzh_new
+shapes light     TwoMuZH   param_ws_new.root wspace_new:light_twomuzh_new
+shapes other     TwoMuZH   param_ws_new.root wspace_new:other_twomuzh
+shapes signal    TwoMuZH   param_ws_new.root wspace_new:signal_twomuzh
+----------------------------------------------------------------------------------------------------------------------------------
+bin          EleMu    TwoMuDY  TwoMuZH
+observation  -1       -1       -1     
+----------------------------------------------------------------------------------------------------------------------------------
+bin                             EleMu    EleMu    EleMu    TwoMuDY  TwoMuDY  TwoMuDY  TwoMuDY  TwoMuZH  TwoMuZH  TwoMuZH  TwoMuZH
+process                         heavy    light    other    signal   heavy    light    other    signal   heavy    light    other  
+process                         1        2        3        0        1        2        3        0        1        2        3      
+rate                            1        -1       -1       -1       1        1        -1       1        1        1        -1     
+----------------------------------------------------------------------------------------------------------------------------------
+Trigger                 lnN     -        -        1.01     1.01     -        -        1.01     1.01     -        -        1.01   
+dy_bkg                  lnN     -        1.99     -        -        -        -        -        -        -        -        -      
+lumi                    lnN     -        -        1.018    1.018    -        -        1.018    1.018    -        -        1.018  
+other_bkg               lnN     -        -        1.99     -        -        -        1.99     -        -        -        1.99   
+rrv_AMax      param  0 1
+rrv_EGS       param  0 1
+rrv_bkg_method_add_sys_bin3  param  0 1
+rrv_bkg_method_add_sys_bin2  param  0 1
+rrv_MES       param  0 1
+rrv_JES       param  0 1
+rrv_bkg_method_add_sys_bin1  param  0 1
+rrv_TA        param  0 1
+rrv_heavy_elemu_to_twomuzh_bin1  param  0 1
+rrv_light_twomudy_to_twomuzh_bin3  param  0 1
+rrv_heavy_elemu_to_twomuzh_bin3  param  0 1
+rrv_heavy_elemu_to_twomuzh_bin2  param  0 1
+rrv_IPSig     param  0 1
+rrv_light_twomudy_to_twomuzh_bin2  param  0 1
+rrv_light_twomudy_to_twomuzh_bin1  param  0 1
+rrv_heavy_elemu_to_twomudy_bin1  param  0 1
+rrv_heavy_elemu_to_twomudy_bin2  param  0 1
+rrv_heavy_elemu_to_twomudy_bin3  param  0 1
+heavy_elemu_bin2_x  flatParam
+heavy_elemu_bin3_x  flatParam
+light_twomudy_bin1_x  flatParam
+heavy_elemu_bin1_x  flatParam
+light_twomudy_bin2_x  flatParam
+light_twomudy_bin3_x  flatParam
